@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Horizon Codex - AI Cinematic Alternative Rock / Ambient Metal</title>
+    <meta name="description" content="The Horizon Codex: Cinematic alternative rock and ambient metal generated with AI. Explore the Codex universe lore, broken code, gods, and mystic horizons.">
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%); color: #e0e0e0; overflow-x: hidden; }
+        header { background: rgba(0,0,0,0.8); padding: 20px; text-align: center; position: fixed; width: 100%; top: 0; z-index: 100; }
+        nav ul { list-style: none; padding: 0; }
+        nav ul li { display: inline; margin: 0 15px; }
+        nav ul li a { color: #e0e0e0; text-decoration: none; font-weight: bold; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: url('data:image/svg+xml;base64,...') center/cover; position: relative; } /* Add hero image BG */
+        .hero h1 { font-size: 4em; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); color: #ff6b35; }
+        .hero p { font-size: 1.5em; margin: 20px 0; }
+        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .dark-card { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 30px; margin: 20px 0; backdrop-filter: blur(10px); }
+        .tracks { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .track { background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; }
+        audio, iframe { width: 100%; border-radius: 10px; }
+        footer { background: rgba(0,0,0,0.9); padding: 20px; text-align: center; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#lore">Codex Lore</a></li>
+                <li><a href="#tracks">Tracks</a></li>
+                <li><a href="#youtube">YouTube</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>The Horizon Codex</h1>
+        <p>Cinematic Alternative Rock / Ambient Metal<br>AI-Generated in the Codex Universe</p>
+        <a href="#tracks" style="background: #ff6b35; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold;">Listen Now</a>
+    </section>
+
+    <section id="lore" class="dark-card">
+        <h2>Broken Code of Horizons</h2>
+        <p>In the shattered realms where gods whisper through fractured code, the Horizon Codex unfolds. Mystic waters drown forgotten rituals, heavy riffs echo eternal voids. Dive into the lore: AI-forged sagas of ambient metal fury.</p>
+        <!-- Add more lore paragraphs or AI prompts here -->
+    </section>
+
+    <section id="tracks">
+        <h2 style="text-align: center;">Latest Tracks</h2>
+        <div class="tracks">
+            <div class="track">
+                <h3>Horizon Fracture</h3>
+                <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/YOUR_TRACK_ID"></iframe> <!-- Replace with Suno/YouTube embed -->
+            </div>
+            <div class="track">
+                <h3>Gods of the Abyss</h3>
+                <audio controls>
+                    <source src="YOUR_TRACK.mp3" type="audio/mpeg"> <!-- Upload MP3 to GitHub -->
+                </audio>
+            </div>
+            <div class="track">
+                <h3>Mystic Code Drop</h3>
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="youtube" class="dark-card">
+        <h2>YouTube Channel</h2>
+        <p>Subscribe: <a href="https://youtube.com/@TheHorizonCodex" target="_blank">@TheHorizonCodex</a></p>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed?listType=playlist&list=YOUR_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section id="contact" class="dark-card">
+        <h2>Join the Codex</h2>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> <!-- Free Formspree -->
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Message"></textarea>
+            <button type="submit" style="background: #ff6b35; color: white; border: none; padding: 10px 20px; border-radius: 5px;">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 The Horizon Codex. All rights reserved. | Powered by AI & Rock</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
