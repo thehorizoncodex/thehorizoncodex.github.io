@@ -4,23 +4,386 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Horizon Codex - AI Cinematic Alternative Rock / Ambient Metal</title>
-    <meta name="description" content="The Horizon Codex: Cinematic alternative rock and ambient metal generated with AI. Explore the Codex universe lore, broken code, gods, and mystic horizons.">
+    <meta name="description" content="The Horizon Codex: Cinematic alternative rock and ambient metal generated with AI. Explore the Codex universe lore, broken code, gods, and mystic horizons. 33 subscribers, 12.2K views.">
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%); color: #e0e0e0; overflow-x: hidden; }
-        header { background: rgba(0,0,0,0.8); padding: 20px; text-align: center; position: fixed; width: 100%; top: 0; z-index: 100; }
-        nav ul { list-style: none; padding: 0; }
-        nav ul li { display: inline; margin: 0 15px; }
-        nav ul li a { color: #e0e0e0; text-decoration: none; font-weight: bold; }
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: url('data:image/svg+xml;base64,...') center/cover; position: relative; } /* Add hero image BG */
-        .hero h1 { font-size: 4em; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); color: #ff6b35; }
-        .hero p { font-size: 1.5em; margin: 20px 0; }
-        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .dark-card { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 30px; margin: 20px 0; backdrop-filter: blur(10px); }
-        .tracks { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .track { background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; }
-        audio, iframe { width: 100%; border-radius: 10px; }
-        footer { background: rgba(0,0,0,0.9); padding: 20px; text-align: center; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } }
+        * { box-sizing: border-box; }
+        
+        :root {
+            --color-primary: #ff6b35;
+            --color-bg: #0f0f23;
+            --color-surface: #1a1a2e;
+            --color-text: #e0e0e0;
+            --color-text-dark: #999;
+            --border-color: #ff6b35;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            color: var(--color-text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--color-primary);
+        }
+        
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        
+        header nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        
+        header nav ul li a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        header nav ul li a:hover {
+            color: var(--color-primary);
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(15,15,35,0.8) 0%, rgba(26,26,46,0.8) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="1"/></filter></defs><rect width="1200" height="600" fill="%23ff6b35" opacity="0.03" filter="url(%23noise)"/></svg>');
+            margin-top: 80px;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,107,53,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            top: 20%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(100,200,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: 10%;
+            right: 10%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+        
+        .hero h1 {
+            font-size: 4em;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8), 0 0 20px rgba(255,107,53,0.3);
+            color: var(--color-primary);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 2px;
+        }
+        
+        .hero p {
+            font-size: 1.3em;
+            margin: 20px 0;
+            color: var(--color-text);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero a {
+            background: var(--color-primary);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 20px rgba(255,107,53,0.3);
+        }
+        
+        .hero a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255,107,53,0.6);
+        }
+        
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--color-primary);
+            text-shadow: 0 0 20px rgba(255,107,53,0.2);
+        }
+        
+        section h3 {
+            font-size: 1.3em;
+            color: var(--color-text);
+            margin: 20px 0 10px 0;
+        }
+        
+        .dark-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,107,53,0.2);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .dark-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 8px 32px 0 rgba(255,107,53,0.2);
+        }
+        
+        .tracks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .track {
+            background: rgba(0,0,0,0.6);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,107,53,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .track:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255,107,53,0.15);
+        }
+        
+        .track h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+            color: var(--color-primary);
+        }
+        
+        .track em {
+            color: var(--color-text-dark);
+            font-size: 0.9em;
+        }
+        
+        .track p {
+            margin: 15px 0;
+            font-size: 0.85em;
+            color: var(--color-text-dark);
+        }
+        
+        iframe {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid rgba(255,107,53,0.2);
+            margin: 15px 0;
+        }
+        
+        .band-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .band-member {
+            background: rgba(255,107,53,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,107,53,0.3);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .band-member:hover {
+            background: rgba(255,107,53,0.2);
+            border-color: var(--color-primary);
+        }
+        
+        .band-member strong {
+            color: var(--color-primary);
+            font-size: 1.1em;
+        }
+        
+        .band-member span {
+            font-size: 0.85em;
+            color: var(--color-text-dark);
+        }
+        
+        .stats-box {
+            background: rgba(255,107,53,0.1);
+            border: 2px solid var(--color-primary);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .stats-box strong {
+            color: var(--color-primary);
+            font-size: 1.2em;
+        }
+        
+        .playlists {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .playlists li {
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255,107,53,0.05);
+            border-left: 3px solid var(--color-primary);
+            padding-left: 20px;
+        }
+        
+        .playlists a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .playlists a:hover {
+            text-decoration: underline;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,107,53,0.3);
+            border-radius: 8px;
+            color: var(--color-text);
+            font-family: inherit;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            background: rgba(255,255,255,0.15);
+            box-shadow: 0 0 10px rgba(255,107,53,0.2);
+        }
+        
+        .btn {
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1em;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(255,107,53,0.5);
+        }
+        
+        footer {
+            background: rgba(0,0,0,0.95);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid var(--color-primary);
+            color: var(--color-text-dark);
+        }
+        
+        .cta-button {
+            background: var(--color-primary);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 15px 0;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(255,107,53,0.3);
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255,107,53,0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                margin-top: 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero p {
+                font-size: 1em;
+            }
+            
+            section {
+                padding: 40px 15px;
+            }
+            
+            section h2 {
+                font-size: 1.8em;
+            }
+            
+            header nav ul li {
+                margin: 0 10px;
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -28,8 +391,9 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#lore">Codex Lore</a></li>
+                <li><a href="#lore">Lore</a></li>
                 <li><a href="#tracks">Tracks</a></li>
+                <li><a href="#band">Band</a></li>
                 <li><a href="#youtube">YouTube</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -39,62 +403,74 @@
     <section id="home" class="hero">
         <h1>The Horizon Codex</h1>
         <p>Cinematic Alternative Rock / Ambient Metal<br>AI-Generated in the Codex Universe</p>
-        <a href="#tracks" style="background: #ff6b35; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold;">Listen Now</a>
+        <a href="#tracks">Explore the Archive</a>
     </section>
 
     <section id="lore" class="dark-card">
-        <h2>Broken Code of Horizons</h2>
-        <p>In the shattered realms where gods whisper through fractured code, the Horizon Codex unfolds. Mystic waters drown forgotten rituals, heavy riffs echo eternal voids. Dive into the lore: AI-forged sagas of ambient metal fury.</p>
-        <!-- Add more lore paragraphs or AI prompts here -->
+        <h2>The Codex Universe</h2>
+        <p><strong>Do you know that feeling — gazing at the horizon and longing to know what lies beyond?</strong></p>
+        <p>Each track is an attempt to decipher the wind's whisper, the stars' language, the secrets hidden in code. In the shattered realms where gods whisper through fractured code, The Horizon Codex unfolds. Mystic waters drown forgotten rituals. Heavy riffs echo eternal voids. Broken systems sing rebirth. Imperfection becomes beauty.</p>
+        <p>Welcome to a universe where cinematic alternative rock meets AI-powered mythology. Where Iris's ethereal voice meets Kai's raw baritone. Where basement gods preach through feedback, and the horizon always calls us forward.</p>
+        <p><em>"Not a bug — but a burning road."</em></p>
     </section>
 
     <section id="tracks">
-        <h2 style="text-align: center;">Latest Tracks</h2>
+        <h2>The Codex Archive</h2>
+        <p style="text-align: center; color: #999; margin-bottom: 40px;">7 Compositions. 1 Universe. Infinite Horizons.</p>
         <div class="tracks">
             <div class="track">
-                <h3>Horizon Fracture</h3>
-                <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/YOUR_TRACK_ID"></iframe> <!-- Replace with Suno/YouTube embed -->
+                <h3>🌟 Starlight Codex</h3>
+                <p><em>Foundation & Map of the Universe</em></p>
+                <iframe height="315" src="https://www.youtube.com/embed/4UQM_upo9xk" frameborder="0" allowfullscreen></iframe>
+                <p>🎵 Cinematic Alternative Rock × Nu-Metal | Iris (Soprano) + Kai (Baritone) | 4:01</p>
             </div>
             <div class="track">
-                <h3>Gods of the Abyss</h3>
-                <audio controls>
-                    <source src="YOUR_TRACK.mp3" type="audio/mpeg"> <!-- Upload MP3 to GitHub -->
-                </audio>
+                <h3>⚡ Oracle of the Broken Code</h3>
+                <p><em>Digital Mythology × Power Metal</em></p>
+                <iframe height="315" src="https://www.youtube.com/embed/eBgSdJRLn7M" frameborder="0" allowfullscreen></iframe>
+                <p>🎵 "I am the oracle of the broken code! Not a bug — but a burning road!" | 4:04</p>
             </div>
             <div class="track">
-                <h3>Mystic Code Drop</h3>
-                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+                <h3>💧 Still Waters</h3>
+                <p><em>Peace After Storm</em></p>
+                <iframe height="315" src="https://www.youtube.com/embed/gy-lztcnRiE" frameborder="0" allowfullscreen></iframe>
+                <p>🎵 Atmospheric Cinematic Rock | Space to Breathe & Remember | 4:18</p>
+            </div>
+            <div class="track">
+                <h3>🌌 Aurora Lights</h3>
+                <p><em>Stranger Finding Home</em></p>
+                <iframe height="315" src="https://www.youtube.com/embed/zCACiGtSQhU" frameborder="0" allowfullscreen></iframe>
+                <p>🎵 Winter Cinematic Rock × Nordic Vibes | Iris Vocals | 4:36</p>
+            </div>
+            <div class="track">
+                <h3>🔥 No Mourning Dress</h3>
+                <p><em>Rebirth Through Fire</em></p>
+                <iframe height="315" src="https://www.youtube.com/embed/amauxcxXx3w" frameborder="0" allowfullscreen></iframe>
+                <p>🎵 Gothic Cinematic Rock × Industrial Goth | Female Vocals Raw & Powerful | 4:21</p>
+            </div>
+            <div class="track">
+                <h3>🏛️ Basement Gods</h3>
+                <p><em>Basement as Sacred Space</em></p>
+                <iframe height="315" src="https://www.youtube.com/embed/kkjteEjdfT8" frameborder="0" allowfullscreen></iframe>
+                <p>🎵 Atmospheric Rock × Spiritual Feedback | "The Congregation Preaches" | 2:50</p>
+            </div>
+            <div class="track">
+                <h3>💪 Iron Veins</h3>
+                <p><em>Strong Love, Not Soft Love</em></p>
+                <iframe height="315" src="https://www.youtube.com/embed/Qj1G9HCjuU4" frameborder="0" allowfullscreen></iframe>
+                <p>🎵 Power Ballad | Male/Female Duet | "My love isn't soft because it's weak" | 5:03</p>
             </div>
         </div>
     </section>
 
-    <section id="youtube" class="dark-card">
-        <h2>YouTube Channel</h2>
-        <p>Subscribe: <a href="https://youtube.com/@TheHorizonCodex" target="_blank">@TheHorizonCodex</a></p>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed?listType=playlist&list=YOUR_PLAYLIST_ID" frameborder="0" allowfullscreen></iframe>
-    </section>
-
-    <section id="contact" class="dark-card">
-        <h2>Join the Codex</h2>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"> <!-- Free Formspree -->
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Message"></textarea>
-            <button type="submit" style="background: #ff6b35; color: white; border: none; padding: 10px 20px; border-radius: 5px;">Send</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 The Horizon Codex. All rights reserved. | Powered by AI & Rock</p>
-    </footer>
-
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
-</body>
-</html>
+    <section id="band" class="dark-card">
+        <h2>🌍 The Band</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Five souls. One vision. The Codex rises.</p>
+        <div class="band-grid">
+            <div class="band-member">
+                <p><strong>Iris</strong><br><span>Vocals (Soprano)</span><br><span style="font-size: 0.8em;">Ethereal voice guiding the horizons</span></p>
+            </div>
+            <div class="band-member">
+                <p><strong>Kai</strong><br><span>Vocals (Baritone)</span><br><span style="font-size: 0.8em;">Raw power in the deep</span></p>
+            </div>
+            <div class="band-member
